@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.10
-    - fastcore >=1.5.41
+    - fastcore >=1.7.1
     - sqlite-minutils
 
 test:
