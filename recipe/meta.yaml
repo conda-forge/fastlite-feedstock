@@ -1,5 +1,5 @@
 {% set name = "fastlite" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fastlite-{{ version }}.tar.gz
-  sha256: a90cff6b1ef8420b1744830272b5ea08f0e75c63ad7b15d8c077b97faced43db
+  sha256: 27f097b943c9a25d6d807bba839fe3e13f6b55a91222d9a7f48594cebe343ec8
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
   run:
     - python >=3.10
     - fastcore >=1.7.1
-    - sqlite-minutils
+    - sqlite-minutils >=3.37
 
 test:
   imports:
