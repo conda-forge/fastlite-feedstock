@@ -1,5 +1,5 @@
 {% set name = "fastlite" %}
-{% set version = "0.0.9" %}
+{% set version = "0.0.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fastlite-{{ version }}.tar.gz
-  sha256: 27f097b943c9a25d6d807bba839fe3e13f6b55a91222d9a7f48594cebe343ec8
+  sha256: 90f111dc30338b1bbc7461b767b23e207356227d968eac60b0e06d5242f7b593
 
 build:
   noarch: python
