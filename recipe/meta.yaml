@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "fastlite" %}
-{% set version = "0.0.13" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fastlite-{{ version }}.tar.gz
-  sha256: e3039dd3ef144953691ea93ed902e46885a7d904feae92a11c835196693ad370
+  sha256: 58991844c6bf58ff266b32726b1456a58bb1225031ddc7e805c247c84d8a6b6c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,6 +21,7 @@ requirements:
     - pip
     - setuptools
   run:
+    - apswutils >=0.0.2
     - python >={{ python_min }}
     - fastcore >=1.7.1
     - sqlite-minutils >=3.37.0.post4
