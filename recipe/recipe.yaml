@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  python_min: 3.10
+  name: fastlite
+  version: 0.1.2
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fastlite-${{ version }}.tar.gz
+  sha256: 58991844c6bf58ff266b32726b1456a58bb1225031ddc7e805c247c84d8a6b6c
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools >=64.0
+  run:
+    - python >=${{ python_min }}
+    - apswutils >=0.0.2
+    - fastcore >=1.7.1
+    # transient dependency of apswutils which does not pin it 
+    # but here we're picking up this old version which is broken
+    # Forcing the constraint to get it to build
+    - apsw >3.39.2.1
+
+tests:
+  - python:
+      imports:
+        - fastlite
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: A bit of extra usability for sqlite
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/AnswerDotAI/fastlite
+
+extra:
+  recipe-maintainers:
+    - synapticarbors
