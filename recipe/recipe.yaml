@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: '3.10'
   name: fastlite
-  version: "0.2.0"
+  version: "0.2.1"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fastlite-${{ version }}.tar.gz
-  sha256: 7a60665a04dde70d9a36800125bd795fc875a291d7291f53fa6be1cec0b360e7
+  sha256: 0b8f0bea62d197175beeff2719086dd361b5c418fb3e52c485cfb99b918925c2
 
 build:
   number: 0
